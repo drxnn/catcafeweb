@@ -1,0 +1,113 @@
+/* QuestionCard styles */
+.container {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  animation: fadeIn var(--transition-slow) ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.categoryTitle {
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--color-text-light);
+  margin-bottom: var(--space-sm);
+  text-align: center;
+}
+
+.questionNumber {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-dark);
+  margin-bottom: var(--space-lg);
+  text-align: center;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.optionCard {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-lg);
+  background: var(--color-white);
+  border: 2px solid transparent;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 2px 8px var(--color-shadow);
+  cursor: pointer;
+  transition:
+    transform var(--transition-fast),
+    border-color var(--transition-fast),
+    box-shadow var(--transition-fast),
+    background var(--transition-fast);
+  text-align: left;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--color-text);
+  width: 100%;
+}
+
+.optionCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px var(--color-shadow-hover);
+  border-color: var(--color-lavender-dark);
+}
+
+.optionCard:active {
+  transform: translateY(0);
+}
+
+.optionCardSelected {
+  composes: optionCard;
+  border-color: var(--color-coral);
+  background: var(--color-coral-light);
+  box-shadow: 0 4px 16px rgba(255, 107, 107, 0.18);
+}
+
+.optionCardSelected:hover {
+  border-color: var(--color-coral-hover);
+}
+
+.optionIndicator {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-full);
+  border: 2px solid var(--color-lavender-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--color-lavender-dark);
+  transition:
+    background var(--transition-fast),
+    border-color var(--transition-fast),
+    color var(--transition-fast);
+}
+
+.optionCardSelected .optionIndicator {
+  background: var(--color-coral);
+  border-color: var(--color-coral);
+  color: var(--color-white);
+}
+
+.optionLabel {
+  flex: 1;
+}
